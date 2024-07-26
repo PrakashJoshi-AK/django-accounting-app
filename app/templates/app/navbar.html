@@ -49,7 +49,10 @@
           <a class="nav-link" href="#">Help</a>
         </li>
         <li>
-          <a class="nav-link btn btn-primary" href="#">Sign Out</a>
+          <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button class="btn btn-warning" type="submit">Sign Out</button>
+          </form>
         </li>
       </ul>
     </div>
